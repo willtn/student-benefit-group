@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "../",
+    "target": "ES5",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "inlineSources": true
+  }
+}

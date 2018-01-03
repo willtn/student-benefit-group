@@ -1,0 +1,29 @@
+{
+  "name": "student-benefit-group",
+  "version": "0.0.0",
+  "description": "Student Benefit Group for Student Benefit",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf build/**/* && webpack -p --progress --colors && dts-bundle --name student-benefit-group --main build/index.d.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "rimraf dist/**/* && npm run build && cp -r build/* dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.pdx.groowin.com:trung.nguyen/student-benefit-group.git"
+  },
+  "author": "Trung Nguyen",
+  "private": true,
+  "devDependencies": {
+    "dts-bundle": "^0.7.3",
+    "rimraf": "^2.6.1",
+    "ts-loader": "^2.3.4",
+    "typescript": "^2.6.1",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "address": "git+http://gitlab.pdx.groowin.com/trung.nguyen/address.git#0.0.0",
+    "funfix-core": "^6.2.2"
+  }
+}
