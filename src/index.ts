@@ -2,6 +2,20 @@ import { Option } from 'funfix-core';
 import { Address, RawAddress } from 'address';
 
 export class StudentBenefitGroup {
+  public static fromRaw(raw: RawStudentBenefitGroup): StudentBenefitGroup {
+    return new StudentBenefitGroup(raw.id, raw.owner, raw.pledge, StudentBenefitGroupData.fromRaw(raw.data), raw.members);
+  }
+
+  public static toRaw(group: StudentBenefitGroup) {
+    return {
+      id: group.id,
+      owner: group.owner,
+      pledge: group.pledge,
+      data: group.data.toRaw(),
+      members: group.members
+    };
+  }
+
   constructor(
     public id: string,
     public owner: string,
@@ -9,6 +23,14 @@ export class StudentBenefitGroup {
     public data: StudentBenefitGroupData,
     public members: number
   ) { }
+}
+
+export interface RawStudentBenefitGroup {
+  id: string;
+  owner: string;
+  pledge: string;
+  data: RawStudentBenefitGroupData;
+  members: number;
 }
 
 export class StudentBenefitGroupData {
@@ -39,6 +61,10 @@ export class StudentBenefitGroupData {
     public twitter: Option<string> = Option.none(),
     public address: Address = new Address('')
   ) { }
+
+  public toRaw() {
+    return StudentBenefitGroupData.toRaw(this);
+  }
 }
 
 export interface RawStudentBenefitGroupData {
