@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "../",
+    "declarationDir": "../build",
+    "outDir": "../build",
     "target": "ES5",
+    "module": "umd",
     "moduleResolution": "node",
     "sourceMap": true,
     "inlineSources": true
