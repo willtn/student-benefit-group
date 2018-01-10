@@ -16,11 +16,8 @@
   "author": "Trung Nguyen",
   "private": true,
   "devDependencies": {
-    "dts-bundle": "^0.7.3",
     "rimraf": "^2.6.1",
-    "ts-loader": "^2.3.4",
-    "typescript": "^2.6.1",
-    "webpack": "^3.5.5"
+    "typescript": "^2.6.1"
   },
   "dependencies": {
     "address": "git+http://gitlab.pdx.groowin.com/trung.nguyen/address.git",
