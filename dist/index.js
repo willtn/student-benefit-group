@@ -1,2 +1,88 @@
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("funfix-core"),require("address")):"function"==typeof define&&define.amd?define(["funfix-core","address"],t):"object"==typeof exports?exports["student-benefit-group"]=t(require("funfix-core"),require("address")):e["student-benefit-group"]=t(e["funfix-core"],e.address)}("undefined"!=typeof self?self:this,function(e,t){return function(e){function t(o){if(n[o])return n[o].exports;var i=n[o]={i:o,l:!1,exports:{}};return e[o].call(i.exports,i,i.exports,t),i.l=!0,i.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,o){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=0)}([function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=n(1),i=n(2),r=function(){function e(e,t,n,o,i){this.id=e,this.owner=t,this.pledge=n,this.data=o,this.members=i}return e.fromRaw=function(t){return new e(t.id,t.owner,t.pledge,d.fromRaw(t.data),t.members)},e.toRaw=function(e){return{id:e.id,owner:e.owner,pledge:e.pledge,data:e.data.toRaw(),members:e.members}},e}();t.StudentBenefitGroup=r;var d=function(){function e(e,t,n,r,d,s,f,u){void 0===t&&(t=o.Option.none()),void 0===n&&(n=o.Option.none()),void 0===r&&(r=o.Option.none()),void 0===d&&(d=o.Option.none()),void 0===s&&(s=o.Option.none()),void 0===f&&(f=o.Option.none()),void 0===u&&(u=new i.Address("")),this.id=e,this.name=t,this.description=n,this.website=r,this.email=d,this.facebook=s,this.twitter=f,this.address=u}return e.fromRaw=function(t){return new e(t.id,o.Option.of(t.name),o.Option.of(t.description),o.Option.of(t.website),o.Option.of(t.email),o.Option.of(t.facebook),o.Option.of(t.twitter),i.Address.fromRaw(t.address))},e.toRaw=function(e){return{address:i.Address.toRaw(e.address),description:e.description.orUndefined(),email:e.email.orUndefined(),facebook:e.facebook.orUndefined(),id:e.id,name:e.name.orUndefined(),twitter:e.twitter.orUndefined(),website:e.website.orUndefined()}},e.prototype.toRaw=function(){return e.toRaw(this)},e}();t.StudentBenefitGroupData=d;var s=function(){function e(e,t,n){this.id=e,this.owner=t,this.group=n}return e}();t.StudentBenefitGroupSubscription=s},function(t,n){t.exports=e},function(e,n){e.exports=t}])});
+(function (factory) {
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
+    }
+    else if (typeof define === "function" && define.amd) {
+        define(["require", "exports", "funfix-core", "address"], factory);
+    }
+})(function (require, exports) {
+    "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
+    var funfix_core_1 = require("funfix-core");
+    var address_1 = require("address");
+    var StudentBenefitGroup = /** @class */ (function () {
+        function StudentBenefitGroup(id, owner, pledge, data, members) {
+            this.id = id;
+            this.owner = owner;
+            this.pledge = pledge;
+            this.data = data;
+            this.members = members;
+        }
+        StudentBenefitGroup.fromRaw = function (raw) {
+            return new StudentBenefitGroup(raw.id, raw.owner, raw.pledge, StudentBenefitGroupData.fromRaw(raw.data), raw.members);
+        };
+        StudentBenefitGroup.toRaw = function (group) {
+            return {
+                id: group.id,
+                owner: group.owner,
+                pledge: group.pledge,
+                data: group.data.toRaw(),
+                members: group.members
+            };
+        };
+        return StudentBenefitGroup;
+    }());
+    exports.StudentBenefitGroup = StudentBenefitGroup;
+    var StudentBenefitGroupData = /** @class */ (function () {
+        function StudentBenefitGroupData(id, name, description, website, email, facebook, twitter, address) {
+            if (name === void 0) { name = funfix_core_1.Option.none(); }
+            if (description === void 0) { description = funfix_core_1.Option.none(); }
+            if (website === void 0) { website = funfix_core_1.Option.none(); }
+            if (email === void 0) { email = funfix_core_1.Option.none(); }
+            if (facebook === void 0) { facebook = funfix_core_1.Option.none(); }
+            if (twitter === void 0) { twitter = funfix_core_1.Option.none(); }
+            if (address === void 0) { address = new address_1.Address(''); }
+            this.id = id;
+            this.name = name;
+            this.description = description;
+            this.website = website;
+            this.email = email;
+            this.facebook = facebook;
+            this.twitter = twitter;
+            this.address = address;
+        }
+        StudentBenefitGroupData.fromRaw = function (raw) {
+            return new StudentBenefitGroupData(raw.id, funfix_core_1.Option.of(raw.name), funfix_core_1.Option.of(raw.description), funfix_core_1.Option.of(raw.website), funfix_core_1.Option.of(raw.email), funfix_core_1.Option.of(raw.facebook), funfix_core_1.Option.of(raw.twitter), address_1.Address.fromRaw(raw.address));
+        };
+        StudentBenefitGroupData.toRaw = function (data) {
+            return {
+                address: address_1.Address.toRaw(data.address),
+                description: data.description.orUndefined(),
+                email: data.email.orUndefined(),
+                facebook: data.facebook.orUndefined(),
+                id: data.id,
+                name: data.name.orUndefined(),
+                twitter: data.twitter.orUndefined(),
+                website: data.website.orUndefined()
+            };
+        };
+        StudentBenefitGroupData.prototype.toRaw = function () {
+            return StudentBenefitGroupData.toRaw(this);
+        };
+        return StudentBenefitGroupData;
+    }());
+    exports.StudentBenefitGroupData = StudentBenefitGroupData;
+    var StudentBenefitGroupSubscription = /** @class */ (function () {
+        function StudentBenefitGroupSubscription(id, owner, // subscriber
+            group // subscribee
+        ) {
+            this.id = id;
+            this.owner = owner;
+            this.group = group; // subscribee
+        }
+        return StudentBenefitGroupSubscription;
+    }());
+    exports.StudentBenefitGroupSubscription = StudentBenefitGroupSubscription;
+});
 //# sourceMappingURL=index.js.map

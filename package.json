@@ -1,6 +1,6 @@
 {
   "name": "student-benefit-group",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Student Benefit Group for Student Benefit",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
     "webpack": "^3.5.5"
   },
   "dependencies": {
-    "address": "git+http://gitlab.pdx.groowin.com/trung.nguyen/address.git#0.0.1",
+    "address": "git+http://gitlab.pdx.groowin.com/trung.nguyen/address.git",
     "funfix-core": "^6.2.2"
   }
 }
