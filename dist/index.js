@@ -42,7 +42,7 @@
             if (email === void 0) { email = funfix_core_1.Option.none(); }
             if (facebook === void 0) { facebook = funfix_core_1.Option.none(); }
             if (twitter === void 0) { twitter = funfix_core_1.Option.none(); }
-            if (address === void 0) { address = new address_1.Address(''); }
+            if (address === void 0) { address = new address_1.Address(); }
             this.id = id;
             this.name = name;
             this.description = description;

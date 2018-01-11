@@ -1,6 +1,6 @@
 {
   "name": "student-benefit-group",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Student Benefit Group for Student Benefit",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
