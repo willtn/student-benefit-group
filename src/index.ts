@@ -59,7 +59,7 @@ export class StudentBenefitGroupData {
     public email: Option<string> = Option.none(),
     public facebook: Option<string> = Option.none(),
     public twitter: Option<string> = Option.none(),
-    public address: Address = new Address('')
+    public address: Address = new Address()
   ) { }
 
   public toRaw() {
