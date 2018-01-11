@@ -17,11 +17,11 @@ export class StudentBenefitGroup {
   }
 
   constructor(
-    public id: string,
-    public owner: string,
-    public pledge: string,
-    public data: StudentBenefitGroupData,
-    public members: number
+    public id: string = 'AAAAAAAAAAAAAAAAAAAAAA',
+    public owner: string = 'AAAAAAAAAAAAAAAAAAAAAA',
+    public pledge: string = 'AAAAAAAAAAAAAAAAAAAAAA',
+    public data: StudentBenefitGroupData = new StudentBenefitGroupData(),
+    public members: number = 0
   ) { }
 }
 
@@ -52,7 +52,7 @@ export class StudentBenefitGroupData {
   }
 
   constructor(
-    public id: string,
+    public id: string = 'AAAAAAAAAAAAAAAAAAAAAA',
     public name: Option<string> = Option.none(),
     public description: Option<string> = Option.none(),
     public website: Option<string> = Option.none(),
@@ -80,8 +80,8 @@ export interface RawStudentBenefitGroupData {
 
 export class StudentBenefitGroupSubscription {
   constructor(
-    public id: string,
-    public owner: string, // subscriber
-    public group: string // subscribee
+    public id: string = 'AAAAAAAAAAAAAAAAAAAAAA',
+    public owner: string = 'AAAAAAAAAAAAAAAAAAAAAA', // subscriber
+    public group: string = 'AAAAAAAAAAAAAAAAAAAAAA' // subscribee
   ) { }
 }
