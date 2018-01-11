@@ -13,6 +13,11 @@
     var address_1 = require("address");
     var StudentBenefitGroup = /** @class */ (function () {
         function StudentBenefitGroup(id, owner, pledge, data, members) {
+            if (id === void 0) { id = 'AAAAAAAAAAAAAAAAAAAAAA'; }
+            if (owner === void 0) { owner = 'AAAAAAAAAAAAAAAAAAAAAA'; }
+            if (pledge === void 0) { pledge = 'AAAAAAAAAAAAAAAAAAAAAA'; }
+            if (data === void 0) { data = new StudentBenefitGroupData(); }
+            if (members === void 0) { members = 0; }
             this.id = id;
             this.owner = owner;
             this.pledge = pledge;
@@ -36,6 +41,7 @@
     exports.StudentBenefitGroup = StudentBenefitGroup;
     var StudentBenefitGroupData = /** @class */ (function () {
         function StudentBenefitGroupData(id, name, description, website, email, facebook, twitter, address) {
+            if (id === void 0) { id = 'AAAAAAAAAAAAAAAAAAAAAA'; }
             if (name === void 0) { name = funfix_core_1.Option.none(); }
             if (description === void 0) { description = funfix_core_1.Option.none(); }
             if (website === void 0) { website = funfix_core_1.Option.none(); }
@@ -77,6 +83,9 @@
         function StudentBenefitGroupSubscription(id, owner, // subscriber
             group // subscribee
         ) {
+            if (id === void 0) { id = 'AAAAAAAAAAAAAAAAAAAAAA'; }
+            if (owner === void 0) { owner = 'AAAAAAAAAAAAAAAAAAAAAA'; }
+            if (group === void 0) { group = 'AAAAAAAAAAAAAAAAAAAAAA'; } // subscribee
             this.id = id;
             this.owner = owner;
             this.group = group; // subscribee

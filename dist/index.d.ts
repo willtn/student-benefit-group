@@ -14,7 +14,7 @@ export declare class StudentBenefitGroup {
         data: RawStudentBenefitGroupData;
         members: number;
     };
-    constructor(id: string, owner: string, pledge: string, data: StudentBenefitGroupData, members: number);
+    constructor(id?: string, owner?: string, pledge?: string, data?: StudentBenefitGroupData, members?: number);
 }
 export interface RawStudentBenefitGroup {
     id: string;
@@ -34,7 +34,7 @@ export declare class StudentBenefitGroupData {
     address: Address;
     static fromRaw(raw: RawStudentBenefitGroupData): StudentBenefitGroupData;
     static toRaw(data: StudentBenefitGroupData): RawStudentBenefitGroupData;
-    constructor(id: string, name?: Option<string>, description?: Option<string>, website?: Option<string>, email?: Option<string>, facebook?: Option<string>, twitter?: Option<string>, address?: Address);
+    constructor(id?: string, name?: Option<string>, description?: Option<string>, website?: Option<string>, email?: Option<string>, facebook?: Option<string>, twitter?: Option<string>, address?: Address);
     toRaw(): RawStudentBenefitGroupData;
 }
 export interface RawStudentBenefitGroupData {
@@ -51,5 +51,5 @@ export declare class StudentBenefitGroupSubscription {
     id: string;
     owner: string;
     group: string;
-    constructor(id: string, owner: string, group: string);
+    constructor(id?: string, owner?: string, group?: string);
 }
