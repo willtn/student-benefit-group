@@ -16,9 +16,5 @@
     "test",
     "tests",
     "src"
-  ],
-  "dependencies": {
-    "funfix": "http://gitlab.pdx.groowin.com/trung.nguyen/funfix.git#~6.2.3-gw.0",
-    "address": "http://gitlab.pdx.groowin.com/trung.nguyen/address.git#~0.1.0"
-  }
+  ]
 }
